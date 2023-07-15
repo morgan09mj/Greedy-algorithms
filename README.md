@@ -2,7 +2,7 @@
 Solving problems with greedy algorithms
 
 # questions:
-## hoarding
+## hoarding :
 In a conversation with his friends in Bostan, Alex realized that dried fruit is going to be expensive.
 So he took his basket and went to the grocery store. His son came to help him to buy the basket and take it home, but he doesn't want to cause his son trouble more than once. He should fill his basket with dried fruits in different ways so that he can spend the maximum possible amount of money by buying one basket and avoid the effect of inflation on the goods.
 The seller tells him the price of products and inventory. You have to help Alex so that he can
@@ -42,7 +42,7 @@ Be careful wi.
 
 ![1_2](https://github.com/morgan09mj/Greedy-algorithms/assets/119484000/83b89a5b-9b78-44fb-9d14-e4dd1d3f2017)
 
-## Collect signatures
+## Collect signatures :
 You are responsible for collecting signatures from all tenants of a particular building. For each tenant,
 You know what time he is at home. You should get all the signatures as possible
 Collect with the least number of references to the building. Mathematical model for this problem
@@ -82,7 +82,7 @@ Note: Be careful that the question asks for the number of references, which is u
 The question asked you for the time of all referrals, the answer to the problem could be different.
 For example, in the second example, the times t = 3 and t = 5 could be correct times to refer to.
 
-## fuel
+## fuel :
 Arya and Amir want to go from city A to city B, which is located at a distance of d kilometers from city A
 go On the road between these two cities, there are n number of fuel stations that they can use in each of them
 Fill them with gas and fuel your car. Every time they fill up with gas, they can max
@@ -138,3 +138,83 @@ Output:
 Explanation:
 Since the car starts traveling with a full tank and the maximum distance it can travel with a full tank
 The distance is 250 km, there is no need to refuel in the middle of the route.
+
+## vow :
+Irfan along with some of his friends are waiting in line to take the vows. Since mysticism and
+His friends are always thinking about their family and want to take offerings for their family members.
+But the problem is that the offering person feeds one person only once. Irfan and his friends
+They know that the offering person needs 1 minute to feed a person.
+They also know that, fortunately, the offerer forgets the offeree after m minutes
+So Irfan and his friends decide that each of them will do it again after at least m minutes
+take an offering
+Now your task is that the minimum time that this row continues until Irfan and his friends
+Find the size they need to take a vow.
+Note: Be careful that the queue may be empty and no one is in the queue.
+Entrance :
+In the first line, the number m comes, which represents the period of time after which the offering person, the offering person
+He forgets the recipient. (100 ≥ m ≥ 1)
+In the second line n, the number of Irfan and his friends is expressed. (10000 ≥ n ≥ 1)
+In the third line, there are n numbers separated by a space, where ai represents the amount of food needed by the i-th person. (n ≥ i ≥ 1) (it is guaranteed that the sum of ai's does not exceed 10000)
+Output:
+On the only output line, print the minimum amount of time the offering queue will last.
+Example 1:
+input:
+2
+2
+3 3
+Output:
+8
+Explanation:
+The first line enters the period of time after which the offerer forgets the offeree
+It is equal to 2. Also, the second line states that the number of Irfan and his friends is two
+There are people and it is stated in the third line that A Erfan needs 3 meals and B his friend also needs 3 meals.
+
+B → A → one minute the queue remains empty → B → A → one minute the queue remains empty → B →A
+
+First, the first person (Irfan) takes his food after 1 minute and leaves the line.
+Then it is the turn of the second person (his friend) and 1 minute later he takes his food and leaves the queue
+goes . Now Irfan A can't enter the queue because the offering person will kill him after two minutes
+He forgets while 1 minute has passed since he took the vow. That's why I have to
+is to enter the queue one minute later and the queue is empty for 1 minute. for this
+After 8 minutes, Irfan and his friend get the food they need.
+Example 2:
+input:
+2
+3
+2 2 2
+Output:
+6
+
+## fixed sum:
+You are given an n-member array of natural numbers whose members are less than or equal to the number
+are natural k. (n is an even number)
+You can change the members of this array in such a way that every time you change one of the members
+Select the array and replace it with a number in the range of 1 to k.
+[1, k]
+The goal is to find the least number of permutations of the array members so that the state
+Let's find that the equation  ![5_1](https://github.com/morgan09mj/Greedy-algorithms/assets/119484000/3ef672a6-d545-4d8d-b39f-e3a9063e8815)   is true for every i from 1 to n/2. This means that the sum of all pairs that come at the same distance from the beginning and the end of the array should be a fixed number.
+Entrance :
+In the first line, the number t is stated, which represents the number of test cases. (1000 ≥ t ≥ 1)
+In the first line of each test case, two numbers n, k are stated, which are respectively equal to the number of array members and
+are the upper limit of the array. (200000 ≥ k ≥ 1, 200000 ≥ n ≥ 2)
+In the second line of each test case, the ai's representing the array members are entered with a distance from each other.
+1 ≤ 𝑖 ≤ 𝑛
+1 ≤ 𝑎𝑖 ≤ 𝑘
+Output:
+For each test case, print the least number of replacements to reach the desired state.
+Example 1:
+input:
+4
+4 2
+1 2 1 2
+4 3
+1 2 2 1
+8 7
+6 1 1 7 6 3 4 6
+6 6
+5 2 6 1 3 4
+Output:
+0
+1
+4
+2
